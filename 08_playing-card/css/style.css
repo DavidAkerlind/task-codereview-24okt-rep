@@ -1,0 +1,83 @@
+/* Body-elementet får dessa stilar */
+body {
+  margin: 0; /* Tar bort standardmarginaler */
+  background: rgb(183, 183, 183); /* Sätter bakgrundsfärg */
+  height: 100vh; /* Ställer in kroppens höjd till 100% av visningsfönstret */
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; /* Anger typsnitt för hela sidan */
+
+  /* Flexbox används för att centrera korten horisontellt och vertikalt */
+  display: flex;
+  flex-direction: row; /* Lägger elementen (korten) i en rad */
+  justify-content: center; /* Centrerar korten horisontellt */
+  align-items: center; /* Centrerar korten vertikalt */
+}
+
+/* Kortet får dessa stilar */
+.card {
+  background: #f7f7f7; /* Ljusgrå bakgrundsfärg på kortet */
+  color: rgb(206, 56, 56); /* Färg på text och hjärtan */
+  box-shadow: 0 0 4rem rgba(0, 0, 0, 0.1); /* Lägger till en skugga runt kortet för en upphöjd effekt */
+
+  /* Flexbox används igen för att organisera innehållet på kortet */
+  display: flex;
+  flex-direction: column; /* Organiserar elementen (top, hearts, bottom) vertikalt */
+  justify-content: space-between; /* Ser till att det är jämnt avstånd mellan elementen */
+  align-items: center; /* Centrerar innehållet horisontellt inom kortet */
+
+  margin: 2rem; /* Ger kortet utrymme runt om */
+  width: 10rem; /* Ställer in kortets bredd */
+  height: 15rem; /* Ställer in kortets höjd */
+  border-radius: 1rem; /* Gör kortets hörn rundade */
+  position: relative; /* Möjliggör absolut positionering för element inom kortet */
+}
+
+/* Stilar för den övre och nedre texten i kortet */
+.card aside.top,
+.card aside.bottom {
+  display: flex;
+  flex-direction: column; /* Organiserar hjärtat och siffran vertikalt */
+  position: absolute; /* Låter oss placera texten fritt inom kortet */
+  font-size: 1.5rem; /* Ställer in textstorlek för hjärta och siffra */
+}
+
+/* Stilar för texten i övre vänstra hörnet */
+.card aside.top {
+  top: 0.5rem; /* Positionerar elementet 0.5rem från toppen */
+  left: 0.5rem; /* Positionerar elementet 0.5rem från vänster */
+}
+
+/* Stilar för texten i nedre högra hörnet */
+.card aside.bottom {
+  bottom: 0.5rem; /* Positionerar elementet 0.5rem från botten */
+  right: 0.5rem; /* Positionerar elementet 0.5rem från höger */
+  transform: rotate(
+    180deg
+  ); /* Roterar texten 180 grader för att matcha kortets riktning */
+}
+
+/* Stilar för att göra så kortat kan ha flera hjärtan  */
+.card .hearts-container {
+  display: flex; /* använder flex för att oragnisera*/
+  flex-wrap: wrap; /* wrap för att wrapa inehållet så att det inte spiller ut*/
+  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 2rem 2rem 2rem 2rem;
+}
+
+/* Stilar för det stora hjärtat i mitten av kortet */
+.card .hearts {
+  font-size: 3rem; /* Ställer in storleken på det stora hjärtat */
+  display: flex; /* Använder flexbox för att centrera hjärtat */
+  justify-content: center; /* Centrerar horisontellt */
+  align-items: center; /* Centrerar vertikalt */
+  margin: auto; /* Ger automatiskt avstånd för att centrera det ännu mer */
+}
+
+/* Stilar för siffran bredvid hjärtat i hörnen */
+.card aside span {
+  font-size: 1.3rem; /* ställer in storleken på siffran 9*/
+  margin-left: 0.1rem; /* Ger ett litet mellanrum mellan siffran och hjärtat */
+  color: rgb(70, 70, 70); /* Ger siffran en mörkare grå färg */
+}
