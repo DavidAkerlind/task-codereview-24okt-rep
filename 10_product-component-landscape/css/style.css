@@ -1,5 +1,10 @@
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     background: rgb(212, 212, 212);
     height: 100vh;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
@@ -10,12 +15,16 @@ body {
     align-items: center;
 }
 
-article.product {
-    margin: 5rem;
+.product {
+    margin: 2rem;
+    display: flex;
     background: #fff;
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
-    display: flex;
+    border-radius: 10px;
     flex-direction: row;
+    overflow: hidden; /*så att det inte spiller ut */
+    max-width: 60rem;
+    height: 45%;
 }
 
 .product figure {
@@ -24,62 +33,62 @@ article.product {
     justify-content: center;
     align-self: center;
     background: rgb(255, 208, 0);
-    margin: 0;
+
+    padding: 2rem;
+    flex: 1;
 }
 
 .product figure img {
-    width: ;
-    padding: 10rem 3rem 5.5rem 3rem;
+    max-width: 100%; /* så att bilden är responsiv*/
+    height: 100%;
+    padding: 7rem 2rem 5rem 2rem;
 }
 
 .product figure figcaption {
     color: rgba(0, 0, 0, 0.8);
     font-size: 2rem;
-    font-weight: 500;
-    align-self: end;
-    padding: 2rem;
+    font-weight: bold;
+    align-self: flex-end;
 }
 
 .product aside {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-
-    padding: 3rem;
-    max-width: 35rem;
+    justify-content: center;
+    padding: 40px; /* runt texten*/
+    flex: 1; /* låter denna section växa och ta upp andra halvan */
 }
 
 .product aside h1 {
     font-size: 4rem;
-    margin: 1rem 0 0 0;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
 }
 
 .product aside h2 {
-    font-size: 2rem;
-    font-weight: 500;
-    margin-top: 0;
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
 }
 
 p {
-    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
     color: rgba(0, 0, 0, 0.7);
 }
 
 button {
-    justify-content: space-between;
-    margin-top: 13rem;
-    background-color: #fff;
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 1rem;
+    border-radius: 10px;
     align-self: flex-end;
+    padding: 10px 20px;
+    font-size: 1rem;
     border: 2px solid black;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 button:hover {
-    box-shadow: 0 0 10rem 0 #dcdcdc;
-    color: black;
-    background-color: rgb(255, 208, 0);
-    cursor: pointer;
+    background-color: black;
+    color: white;
+    transition: 0.3 ease;
 }
